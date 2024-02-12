@@ -1,17 +1,13 @@
-import { useState } from 'react'
+import Navbar from './components/navbar/Navbar'
+import Routing from './Routing'
 import './App.scss'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
 
   return (
     <>
-      <h1>Sphere Container Demo</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <Navbar />
+      <Routing />
     </>
   )
 }
