@@ -1,0 +1,20 @@
+.navbar {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    .logo {
+        max-width: 204px;
+        max-height: 150px;
+    }
+    .navlinks-container {
+        display: flex;
+        justify-content: space-around;
+        font-size: 17px;
+        margin-top: 0.5rem;
+        a {
+            color: rgb(18, 19, 20);
+            &:hover {
+                color: rgb(19, 91, 238);
+            }
+        }
+    }
+}
