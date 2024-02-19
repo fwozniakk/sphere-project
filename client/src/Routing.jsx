@@ -13,7 +13,7 @@ const Routing = () => {
         <Route path="/compilers" element={<Compiler />} />
         <Route path="/problems" element={<Problem />} />
         <Route path="/containers" element={<ContainerMenu />} />
-        <Route path="/containers/flask" element={<Container />} />
+        <Route path="/containers/:workspace_id" element={<Container />} />
         <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )

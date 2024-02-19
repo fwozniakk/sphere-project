@@ -5,29 +5,28 @@ import './Problem.scss'
 const Problem = () => {
 
     useEffect(() => {
-        (function(d, s, id){
-            let SE_BASE = "widgets.sphere-engine.com";
-            let SE_HTTPS = true;
-            let SE = window.SE || (window.SE = []);
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = (SE_HTTPS ? "https" : "http") + "://" + SE_BASE + "/static/sdk/sdk.min.js";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, "script", "sphere-engine-jssdk"));
+        window.SE.ready(() => {
+            var widget = window.SE.widget('problem-widget');
+            console.log(window.SE)
+            console.log(window.SE.widget('problem-widget'))
+        });
 
-
+        console.log(window.location.host)
+        
+        
         return () => {
-            const scriptElement = document.getElementById("sphere-engine-jssdk");
-            scriptElement.parentNode.removeChild(scriptElement);
+            window.SE.ready(function () {
+                var widget = window.SE.widget('problem-widget');
+                //widget.destroy();
+            });
         };
     }, []);
 
     return (
         <div className="problem-page">  
-            <h1>Problems</h1>
-            <div className="problem-container">
-                <div className="se-widget" data-widget={import.meta.env.VITE_PROBLEM_WIDGET_HASH} data-theme="dark"></div>
+            <h1>Example Problem</h1>
+            <div className="problem-container" style={{'height': '650px'}}>
+                <div className="se-widget" data-id="problem-widget" data-widget={import.meta.env.VITE_PROBLEM_WIDGET_HASH} data-theme="dark"></div>
             </div>
         </div>
     );

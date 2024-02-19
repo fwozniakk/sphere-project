@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./src/assets/sphere-logo.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sphere Container Demo</title>
+    <title>Sphere Demo</title>
     <script>
       (function(d, s, id){
-          let SE_BASE = "containers.sphere-engine.com";
-          let SE_HTTPS = true;
-          let SE = window.SE || (window.SE = []);
+        // widgets.sphere-engine.com for problems or containers for containers.sphere-engine.com
+          SE_BASE = "widgets.sphere-engine.com";
+          SE_HTTPS = true;
+          SE = window.SE || (window.SE = []);
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;

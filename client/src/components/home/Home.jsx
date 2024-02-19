@@ -4,7 +4,7 @@ const Home = () => {
 
   return (
       <>
-        <h1>Sphere Container Demo</h1>
+        <h1>Sphere Component Demo</h1>
       </>
   );
 }
