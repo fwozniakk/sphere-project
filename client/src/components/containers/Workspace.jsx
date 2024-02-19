@@ -1,13 +1,12 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import  { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 
-const Workspace = () => {
-    let { workspace_id } = useParams();
+const Workspace = (props) => {
+    const workspace_id = props.workspace_id;
 
     useEffect(() => {
-        console.log(workspace_id)
-
         const createWorkspace = () => {
           const workspace = window.SE.workspace("sec-workspace");
           console.log('workspace', workspace);
