@@ -1,32 +1,34 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import  { useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import  { useEffect, useState } from 'react'
 
 const Workspace = (props) => {
+    const [workspace, setWorkspace] = useState(null);
     const workspace_id = props.workspace_id;
 
     useEffect(() => {
         const createWorkspace = () => {
-          const workspace = window.SE.workspace("sec-workspace");
-          console.log('workspace', workspace);
+          const newWorkspace = window.SE.workspace("sec-workspace");
+          setWorkspace(newWorkspace);
+          console.log('workspace', newWorkspace);
         };
     
         const destroyWorkspace = () => {
-          var workspace = window.SE.workspace("sec-workspace");
           console.log('workspace', workspace);
           if (workspace) {
             workspace.destroy();
           }
         };
     
-
         createWorkspace();
     
         return () => {
-            //destroyWorkspace();
+          if (workspace) {
+            destroyWorkspace();
+            setWorkspace(null);
+          }
         };
-    }, []);
+    }, [workspace]);
 
     return (
         <div className="workspace-page">  

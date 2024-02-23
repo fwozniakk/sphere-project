@@ -1,6 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Workspace from './Workspace';
